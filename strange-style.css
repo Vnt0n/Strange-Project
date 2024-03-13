@@ -5,30 +5,30 @@ body {
 .container {
     text-align: center;
     margin: 0 auto;
-  }
+}
 
-  .image-container img,
-  .image-container iframe {
+.image-container img,
+.image-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
-  .image-container img {
+.image-container img {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-  }
+}
 
-  .image-container iframe {
+.image-container iframe {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-  }
+}
 
-  .image-container:hover img {
+.image-container:hover img {
     opacity: 0;
-  }
+}
 
-  .image-container:hover iframe {
+.image-container:hover iframe {
     opacity: 1;
-  }
+}
