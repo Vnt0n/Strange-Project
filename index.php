@@ -16,6 +16,7 @@
 
       <img src="/images/lynch-avatar.jpg" alt="David Lynch portrait" class="img-circle">
       <h1>Lynch's Daydream</h1>
+      <script>console.log("Let it go");</script>
 
     </header>
 
