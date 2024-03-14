@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>Strange</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="strange-style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="strange-style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-
     <header class="black-box-header">
-
-        <script>console.log("Let it go");</script>
-
+      <script>
+        console.log("Let it go");
+      </script>
     </header>
 
     <main>
-        <div class="container">
-            <div class="image-container">
-
-            <iframe
-                src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
-                frameborder="0"
-                width="1203px"
-                height="767px"
-            >
-            </iframe>
-
-            </div>
-
-            <audio>
-                <source src="sounds/evolution_arm.mp3" type="audio/mp3">
-            </audio>
-
-            <div id="audio-controls" class="controls" data-state="hidden">
-                <button id="playpause" type="button" data-state="play">
-                    <img src="/icons/evil-play_white.png" alt="Play/Stop">
-                </button>
-            </div>
-
-            <script>
-
-                const audio = document.querySelector('audio');
-                const playPauseButton = document.getElementById('playpause');
-                const stopButton = document.getElementById('stop');
-
-                playPauseButton.addEventListener('click', () => {
-                    if (audio.paused) {
-                        audio.play();
-                    } else {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    }
-                });
-
-            </script>
-
+      <div class="container">
+        <div class="video-container">
+          <iframe
+            src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
+            frameborder="0"
+            width="1203px"
+            height="767px"
+          >
+          </iframe>
         </div>
 
+        <div id="audio-controls" class="controls" data-state="hidden">
+          <button id="playpause" type="button" data-state="play">
+            <img src="/icons/evil-play_white.png" alt="Play/Stop" />
+          </button>
+        </div>
+
+        <audio>
+          <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
+        </audio>
+
+        <script>
+          const audio = document.querySelector("audio");
+          const playPauseButton = document.getElementById("playpause");
+          const stopButton = document.getElementById("stop");
+
+          playPauseButton.addEventListener("click", () => {
+            if (audio.paused) {
+              audio.play();
+            } else {
+              audio.pause();
+              audio.currentTime = 0;
+            }
+          });
+        </script>
+      </div>
     </main>
 
-  <footer>
-
-  </footer>
-
+    <footer></footer>
   </body>
-
 </html>
