@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: white;
 }
 
 .container {
@@ -23,6 +23,3 @@ body {
     opacity: 1;
 }
 
-audio {
-    display: none;
-}
