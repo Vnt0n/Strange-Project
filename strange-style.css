@@ -55,6 +55,9 @@ button:hover {
         align-items: center;
         height: 80vh;
     }
+    button:hover {
+        opacity: 1;
+    }
   }
 
   @media (max-width: 575px) {
@@ -66,5 +69,8 @@ button:hover {
         justify-content: center;
         align-items: center;
         height: 80vh;
+    }
+    button:hover {
+        opacity: 1;
     }
   }
