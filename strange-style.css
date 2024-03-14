@@ -32,12 +32,19 @@ button {
     border: none;
     transition: opacity 0.2s ease-in-out;
     opacity: 1;
+    padding: 10px;
+}
+
+button img {
+    width: 66px;
 }
 
 button:hover {
     opacity: 0.5;
 }
 
-button img {
-    width: 66px;
-}
+#playpause.playing {
+    background-color: #53040C;
+    border-radius: 30%;
+    opacity: 1;
+  }
