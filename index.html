@@ -6,65 +6,71 @@
     <link rel="stylesheet" href="strange-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
         alert("You'll probably want the audio ON");
-        }
+      }
     </script>
-      <script>
-        console.log("Let it go");
-      </script>
+    <script>
+      console.log("Let it go");
+    </script>
   </head>
 
   <body>
     <header></header>
 
     <main>
-
-        <div class="container">
-
-            <div class="video-container">
-                <iframe
-                    src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
-                    frameborder="0"
-                    width="1203px"
-                    height="767px"
-                >
-                </iframe>
-            </div>
-
-            <div id="audio-controls" class="controls" data-state="hidden">
-                <button id="playpause" type="button" data-state="play">
-                    <img src="/icons/evil-play_white.png" alt="Play/Stop" />
-                </button>
-            </div>
-
-            <audio>
-                <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
-            </audio>
-
-            <script>
-                const audio = document.querySelector("audio");
-                const playPauseButton = document.getElementById("playpause");
-
-                playPauseButton.addEventListener("click", () => {
-                    if (audio.paused) {
-                        audio.play();
-                        playPauseButton.classList.add("playing");
-                    } else {
-                        audio.pause();
-                        audio.currentTime = 0;
-                        playPauseButton.classList.remove("playing");
-                    }
-                });
-
-                audio.addEventListener("ended", () => {
-                    playPauseButton.classList.remove("playing");
-                });
-
-            </script>
-
+      <div class="container">
+        <div class="video-container" id="video">
+          <iframe
+            src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
+            frameborder="0"
+            width="1203px"
+            height="767px"
+          >
+          </iframe>
         </div>
 
+        <div id="audio-controls" class="controls" data-state="hidden">
+          <button id="playpause" type="button" data-state="play">
+            <img src="/icons/evil-play_white.png" alt="Play/Stop" />
+          </button>
+        </div>
+
+        <audio>
+          <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
+        </audio>
+
+        <script>
+          const audio = document.querySelector("audio");
+          const playPauseButton = document.getElementById("playpause");
+          const videoDisplayed = document.getElementById("video");
+
+          playPauseButton.addEventListener("click", () => {
+            if (audio.paused) {
+              audio.play();
+              playPauseButton.classList.add("playing");
+              videoDisplayed.classList.add("display-video");
+              videoDisplayed.classList.remove("hide-video");
+            } else {
+              audio.pause();
+              audio.currentTime = 0;
+              playPauseButton.classList.remove("playing");
+              videoDisplayed.classList.remove("display-video");
+              videoDisplayed.classList.add("hide-video");
+            }
+          });
+
+          audio.addEventListener("ended", () => {
+            playPauseButton.classList.remove("playing");
+            videoDisplayed.classList.remove("display-video");
+            videoDisplayed.classList.add("hide-video");
+          });
+        </script>
+      </div>
     </main>
 
     <footer></footer>

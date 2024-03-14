@@ -14,13 +14,18 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.video-container iframe {
+.video-container {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.video-container:hover iframe {
+.display-video {
     opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.hide-video {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
 
 button {
