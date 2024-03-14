@@ -24,6 +24,17 @@
 
     <main>
       <div class="container">
+
+          <div id="audio-controls" class="controls" data-state="hidden">
+            <button id="playpause" type="button" data-state="play">
+              <img src="/icons/evil-play_white.png" alt="Play/Stop" />
+            </button>
+          </div>
+
+          <audio>
+            <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
+          </audio>
+          
         <div class="video-container" id="video">
           <iframe
             src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
@@ -34,15 +45,6 @@
           </iframe>
         </div>
 
-        <div id="audio-controls" class="controls" data-state="hidden">
-          <button id="playpause" type="button" data-state="play">
-            <img src="/icons/evil-play_white.png" alt="Play/Stop" />
-          </button>
-        </div>
-
-        <audio>
-          <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
-        </audio>
 
         <script>
           const audio = document.querySelector("audio");
