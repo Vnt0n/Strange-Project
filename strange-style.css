@@ -7,6 +7,10 @@ body {
     margin: 0 auto;
 }
 
+/* .video-container {
+    background-image: url(/icons/evil-play_white.png);
+} */
+
 .video-container iframe {
     position: absolute;
     top: 50%;
@@ -26,4 +30,14 @@ body {
 button {
     background-color: black;
     border: none;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+button img {
+    width: 66px;
 }
