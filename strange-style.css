@@ -22,3 +22,7 @@ body {
 .image-container:hover iframe {
     opacity: 1;
 }
+
+audio {
+    display: none;
+}
