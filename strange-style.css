@@ -7,7 +7,6 @@ body {
     margin: 0 auto;
 }
 
-.image-container img,
 .image-container iframe {
     position: absolute;
     top: 50%;
@@ -15,18 +14,9 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.image-container img {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
 .image-container iframe {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
-
-.image-container:hover img {
-    opacity: 0;
 }
 
 .image-container:hover iframe {
