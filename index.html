@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="strange-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { alert("Ce site web n'est accessible que sur ordinateur"); }
+ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  alert("Ce site web n'est accessible que sur ordinateur.");
+  var okButton = document.getElementById('okButton');
+  okButton.onclick = function() {
+    window.location.href = 'https://lestreize.fr/';
+  };
+}
+
     </script>
   </head>
 
