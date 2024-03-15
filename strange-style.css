@@ -47,22 +47,7 @@ button:hover {
     opacity: 1;
   }
 
-  @media (max-width: 767px) {
-    .video-container {
-        display: none;
-    }
-    .controls {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80vh;
-    }
-    button:hover {
-        opacity: 1;
-    }
-  }
-
-  @media (max-width: 575px) {
+  @media (max-width: 1260px) {
     .video-container {
         display: none;
     }
