@@ -55,7 +55,7 @@ button:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 60vh;
     }
     button:hover {
         opacity: 1;
