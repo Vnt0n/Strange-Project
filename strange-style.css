@@ -28,7 +28,7 @@ body {
 button {
     background-color: black;
     border: none;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; /* Transitions combinées */
     opacity: 1;
     padding: 10px;
 }
@@ -45,6 +45,10 @@ button:hover {
     background-color: #53040C;
     border-radius: 30%;
     opacity: 1;
+  }
+
+  #playpause.completed {
+    transform: rotate(90deg);
   }
 
   @media (max-width: 1260px) {

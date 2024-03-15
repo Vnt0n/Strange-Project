@@ -46,7 +46,6 @@
           </iframe>
         </div>
 
-
         <script>
           const audio = document.querySelector("audio");
           const playPauseButton = document.getElementById("playpause");
@@ -69,6 +68,7 @@
 
           audio.addEventListener("ended", () => {
             playPauseButton.classList.remove("playing");
+            playPauseButton.classList.add("completed");
             videoDisplayed.classList.remove("display-video");
             videoDisplayed.classList.add("hide-video");
           });
