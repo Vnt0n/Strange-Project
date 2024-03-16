@@ -13,21 +13,20 @@ playPauseButton.addEventListener("click", function() {
     >
     </iframe>
   `;
+  iframeContainer.classList.add("show");
   iframeContainer.innerHTML = iframeHtml;
 });
 
 playPauseButton.addEventListener("click", () => {
     audio.play();
     playPauseButton.classList.add("playing");
-
 });
 
 audio.addEventListener("ended", () => {
-  playPauseButton.classList.remove("playing");
-  iframeContainer.style.display = "none";
-
-  setTimeout(() => {
-      playPauseButton.classList.add("completed");
-  }, 700);
+    playPauseButton.classList.remove("playing");
+    iframeContainer.classList.add("fade-out");
+    setTimeout(() => {
+        playPauseButton.classList.add("completed");
+    }, 500);
 
 });
