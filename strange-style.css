@@ -7,22 +7,8 @@ body {
     margin: 0 auto;
 }
 
-.video-container {
-    opacity: 0;
-}
-
 .controls {
     margin-top: 100px;
-}
-
-.display-video {
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-}
-
-.hide-video {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 button {
@@ -41,17 +27,17 @@ button:hover {
     opacity: 0.5;
 }
 
-#playpause.playing {
+#play-btn.playing {
     background-color: #53040C;
     border-radius: 30%;
     opacity: 1;
   }
 
-  #playpause.completed {
+#play-btn.completed {
     transform: rotate(90deg);
-  }
+}
 
-  @media (max-width: 1260px) {
+@media (max-width: 1260px) {
     .video-container {
         display: none;
     }
@@ -64,4 +50,4 @@ button:hover {
     button:hover {
         opacity: 1;
     }
-  }
+}

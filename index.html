@@ -4,7 +4,7 @@
     <title>Strange</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="strange-style.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
       if (
@@ -21,61 +21,22 @@
   </head>
 
   <body>
-    <header></header>
-
     <main>
       <div class="container">
-
-          <div id="audio-controls" class="controls" data-state="hidden">
-            <button id="playpause" type="button" data-state="play">
-              <img src="/icons/evil-play_white.png" alt="Play/Stop" />
-            </button>
-          </div>
-
-          <audio>
-            <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
-          </audio>
-
-        <div class="video-container" id="video">
-          <iframe
-            src="https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1"
-            frameborder="0"
-            width="1203px"
-            height="767px"
-          >
-          </iframe>
+        <div id="audio-controls" class="controls" data-state="hidden">
+          <button id="play-btn" type="button" data-state="play">
+            <img src="/icons/evil-play_white.png" alt="Play/Stop" />
+          </button>
         </div>
 
-        <script>
-          const audio = document.querySelector("audio");
-          const playPauseButton = document.getElementById("playpause");
-          const videoDisplayed = document.getElementById("video");
+        <audio>
+          <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
+        </audio>
 
-          playPauseButton.addEventListener("click", () => {
-            if (audio.paused) {
-              audio.play();
-              playPauseButton.classList.add("playing");
-              videoDisplayed.classList.add("display-video");
-              videoDisplayed.classList.remove("hide-video");
-            } else {
-              audio.pause();
-              audio.currentTime = 0;
-              playPauseButton.classList.remove("playing");
-              videoDisplayed.classList.remove("display-video");
-              videoDisplayed.classList.add("hide-video");
-            }
-          });
-
-          audio.addEventListener("ended", () => {
-            playPauseButton.classList.remove("playing");
-            playPauseButton.classList.add("completed");
-            videoDisplayed.classList.remove("display-video");
-            videoDisplayed.classList.add("hide-video");
-          });
-        </script>
+        <div id="video-container"></div>
       </div>
     </main>
 
-    <footer></footer>
+    <script src="/js/main.js"></script>
   </body>
 </html>
