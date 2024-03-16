@@ -3,7 +3,6 @@ const iframeContainer = document.getElementById("video-container");
 const audio = document.querySelector("audio");
 
 playPauseButton.addEventListener("click", function() {
-
     const iframeHtml = `
         <div id="first-video">
             <iframe
@@ -38,5 +37,4 @@ audio.addEventListener("ended", () => {
     setTimeout(() => {
         playPauseButton.classList.add("completed");
     }, 1500);
-
 });
