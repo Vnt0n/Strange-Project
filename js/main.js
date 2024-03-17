@@ -74,3 +74,5 @@ audio.addEventListener("ended", () => {
         playPauseButton.style.transform = `rotate(${rotationCount + 90}deg)`;
     }, 1500);
 });
+
+console.log("Let it go");
