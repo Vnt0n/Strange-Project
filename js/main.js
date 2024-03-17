@@ -9,7 +9,7 @@ const medias = [
 ];
 
 const sounds = [
-    "sounds/test-sound_1.mp3",
+    "sounds/evolution_arm.mp3",
     "sounds/test-sound_2.mp3",
     "sounds/zelda.mp3",
 ];
