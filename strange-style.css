@@ -36,6 +36,7 @@ button:hover {
 
 button.playing {
     opacity: 1;
+    pointer-events: none;
 }
 
 .fade-in {

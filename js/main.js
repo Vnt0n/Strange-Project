@@ -15,8 +15,11 @@ const sounds = [
 ];
 
 let currentIndex = 0;
+let isSoundPlaying = false;
 
 playPauseButton.addEventListener("click", function() {
+
+    if (isSoundPlaying) return;
 
     const soundUrl = sounds[currentIndex];
     const videoUrl = videos[currentIndex];
