@@ -14,21 +14,16 @@ const sounds = [
 ];
 
 playPauseButton.addEventListener("click", function() {
-    // Sélection aléatoire d'un son
     const randomSoundIndex = Math.floor(Math.random() * sounds.length);
     const soundUrl = sounds[randomSoundIndex];
 
-    // Chargement et lecture du son
     audio.src = soundUrl;
     audio.play();
 
-    // Sélection aléatoire d'une vidéo
     const randomVideoIndex = Math.floor(Math.random() * videos.length);
     const videoUrl = videos[randomVideoIndex];
 
-    // Injection de la vidéo
     const iframeHtml = `
-        <div id="first-video">
             <iframe
                 src="${videoUrl}"
                 frameborder="0"
@@ -36,8 +31,11 @@ playPauseButton.addEventListener("click", function() {
                 height="767px"
                 >
             </iframe>
-        </div>
     `;
+
+    iframeContainer.innerHTML = '';
+
+
     iframeContainer.innerHTML = iframeHtml;
     iframeContainer.classList.add('fade-in');
     setTimeout(() => {
@@ -54,11 +52,11 @@ audio.addEventListener("ended", () => {
     iframeContainer.classList.remove("fade-in");
     iframeContainer.classList.remove("show-video");
 
-    iframeContainer.classList.add("hide-video");
-    iframeContainer.classList.add("fade-out");
+//    iframeContainer.classList.add("hide-video");
+//    iframeContainer.classList.add("fade-out");
     setTimeout(() => {
         const rotationCount = parseInt(playPauseButton.getAttribute("data-rotation")) || 0;
-        
+
         playPauseButton.setAttribute("data-rotation", rotationCount + 90);
         playPauseButton.style.transform = `rotate(${rotationCount + 90}deg)`;
     }, 1500);
