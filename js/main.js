@@ -5,6 +5,7 @@ const audio = document.querySelector("audio");
 const videos = [
     "https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1",
     "https://player.vimeo.com/video/49804013&amp;background=1&amp;loop=1",
+    "images/white.jpg",
 ];
 
 const sounds = [
@@ -13,15 +14,21 @@ const sounds = [
     "sounds/zelda.mp3",
 ];
 
+let currentIndex = 0;
+
 playPauseButton.addEventListener("click", function() {
-    const randomSoundIndex = Math.floor(Math.random() * sounds.length);
-    const soundUrl = sounds[randomSoundIndex];
+
+    const soundUrl = sounds[currentIndex];
+    const videoUrl = videos[currentIndex];
+
+    // Code pour randomiser
+//    const randomSoundIndex = Math.floor(Math.random() * sounds.length);
+//    const soundUrl = sounds[randomSoundIndex];
+//    const randomVideoIndex = Math.floor(Math.random() * videos.length);
+//    const videoUrl = videos[randomVideoIndex];
 
     audio.src = soundUrl;
     audio.play();
-
-    const randomVideoIndex = Math.floor(Math.random() * videos.length);
-    const videoUrl = videos[randomVideoIndex];
 
     const iframeHtml = `
             <iframe
@@ -33,20 +40,20 @@ playPauseButton.addEventListener("click", function() {
             </iframe>
     `;
 
-    iframeContainer.innerHTML = '';
-
     playPauseButton.classList.add("playing");
 
+    iframeContainer.innerHTML = '';
     iframeContainer.innerHTML = iframeHtml;
 
     iframeContainer.classList.add('fade-in');
     setTimeout(() => {
         iframeContainer.classList.add('show-video');
-    }, 1000);
+    }, 500);
 
     iframeContainer.classList.remove("hide-video");
     iframeContainer.classList.remove("fade-out");
 
+    currentIndex = (currentIndex + 1) % sounds.length; // Réinitialiser à 0 une fois qu'on atteint la fin du tableau
 });
 
 audio.addEventListener("ended", () => {
@@ -57,9 +64,9 @@ audio.addEventListener("ended", () => {
 
     iframeContainer.classList.add("hide-video");
     iframeContainer.classList.add("fade-out");
+
     setTimeout(() => {
         const rotationCount = parseInt(playPauseButton.getAttribute("data-rotation")) || 0;
-
         playPauseButton.setAttribute("data-rotation", rotationCount + 90);
         playPauseButton.style.transform = `rotate(${rotationCount + 90}deg)`;
     }, 1500);
