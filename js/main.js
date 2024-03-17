@@ -35,14 +35,17 @@ playPauseButton.addEventListener("click", function() {
 
     iframeContainer.innerHTML = '';
 
+    playPauseButton.classList.add("playing");
 
     iframeContainer.innerHTML = iframeHtml;
+
     iframeContainer.classList.add('fade-in');
     setTimeout(() => {
         iframeContainer.classList.add('show-video');
     }, 1000);
 
-    playPauseButton.classList.add("playing");
+    iframeContainer.classList.remove("hide-video");
+    iframeContainer.classList.remove("fade-out");
 
 });
 
@@ -52,8 +55,8 @@ audio.addEventListener("ended", () => {
     iframeContainer.classList.remove("fade-in");
     iframeContainer.classList.remove("show-video");
 
-//    iframeContainer.classList.add("hide-video");
-//    iframeContainer.classList.add("fade-out");
+    iframeContainer.classList.add("hide-video");
+    iframeContainer.classList.add("fade-out");
     setTimeout(() => {
         const rotationCount = parseInt(playPauseButton.getAttribute("data-rotation")) || 0;
 
