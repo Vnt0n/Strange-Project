@@ -71,3 +71,13 @@ button.playing {
         opacity: 1;
     }
 }
+
+@media (max-height: 900px) {
+    iframe {
+        width: 628px;
+        height: 400px;
+    }
+    #video-container img {
+        height: 400px;
+    }
+}

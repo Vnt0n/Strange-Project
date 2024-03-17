@@ -2,10 +2,10 @@ const playPauseButton = document.getElementById("play-btn");
 const iframeContainer = document.getElementById("video-container");
 const audio = document.querySelector("audio");
 
-const videos = [
-    "https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1",
-    "https://player.vimeo.com/video/49804013&amp;background=1&amp;loop=1",
-    "images/white.jpg",
+const medias = [
+    { type: "video", src: "https://player.vimeo.com/video/922973382?h=84d2736be5&amp;background=1&amp;loop=1" },
+    { type: "video", src: "https://player.vimeo.com/video/49804013&amp;background=1&amp;loop=1" },
+    { type: "image", src: "images/white.jpg" },
 ];
 
 const sounds = [
@@ -22,41 +22,41 @@ playPauseButton.addEventListener("click", function() {
     if (isSoundPlaying) return;
 
     const soundUrl = sounds[currentIndex];
-    const videoUrl = videos[currentIndex];
-
-    // Code pour randomiser
-//    const randomSoundIndex = Math.floor(Math.random() * sounds.length);
-//    const soundUrl = sounds[randomSoundIndex];
-//    const randomVideoIndex = Math.floor(Math.random() * videos.length);
-//    const videoUrl = videos[randomVideoIndex];
+    const media = medias[currentIndex];
+    const mediaType = media.type;
+    const mediaUrl = media.src;
 
     audio.src = soundUrl;
     audio.play();
 
-    const iframeHtml = `
+    if (mediaType === "video") {
+        const iframeHtml = `
             <iframe
-                src="${videoUrl}"
+                src="${mediaUrl}"
                 frameborder="0"
                 width="1203px"
                 height="767px"
-                >
-            </iframe>
-    `;
+            ></iframe>
+        `;
+        iframeContainer.innerHTML = iframeHtml;
+    } else if (mediaType === "image") {
+        const imageHtml = `<div><img src="${mediaUrl}" alt="Image"/></div>`;
+        iframeContainer.innerHTML = imageHtml;
+    }
 
     playPauseButton.classList.add("playing");
-
-    iframeContainer.innerHTML = '';
-    iframeContainer.innerHTML = iframeHtml;
 
     iframeContainer.classList.add('fade-in');
     setTimeout(() => {
         iframeContainer.classList.add('show-video');
+        isSoundPlaying = false;
     }, 500);
 
     iframeContainer.classList.remove("hide-video");
     iframeContainer.classList.remove("fade-out");
 
     currentIndex = (currentIndex + 1) % sounds.length; // Réinitialiser à 0 une fois qu'on atteint la fin du tableau
+    isSoundPlaying = true;
 });
 
 audio.addEventListener("ended", () => {
