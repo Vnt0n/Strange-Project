@@ -27,15 +27,11 @@ button:hover {
     opacity: 0.5;
 }
 
-#play-btn.playing {
+.playing {
     background-color: #53040C;
     border-radius: 30%;
     opacity: 1;
   }
-
-#play-btn.completed {
-    transform: rotate(90deg);
-}
 
 .fade-in {
     opacity: 0;
