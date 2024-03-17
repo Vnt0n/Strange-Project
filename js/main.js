@@ -58,6 +58,7 @@ audio.addEventListener("ended", () => {
     iframeContainer.classList.add("fade-out");
     setTimeout(() => {
         const rotationCount = parseInt(playPauseButton.getAttribute("data-rotation")) || 0;
+        
         playPauseButton.setAttribute("data-rotation", rotationCount + 90);
         playPauseButton.style.transform = `rotate(${rotationCount + 90}deg)`;
     }, 1500);
