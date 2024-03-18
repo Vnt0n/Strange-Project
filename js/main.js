@@ -34,8 +34,8 @@ playPauseButton.addEventListener("click", function() {
             <iframe
                 src="${mediaUrl}"
                 frameborder="0"
-                width="1203px"
-                height="767px"
+                // width="1203px"
+                // height="767px"
             ></iframe>
         `;
         iframeContainer.innerHTML = iframeHtml;
@@ -75,4 +75,4 @@ audio.addEventListener("ended", () => {
     }, 1500);
 });
 
-console.log("Let it go");
+console.log("Let it happen");
