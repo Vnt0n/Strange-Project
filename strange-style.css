@@ -68,6 +68,16 @@ button.playing {
     object-fit: cover;
 }
 
+.hidden {
+    opacity: 0;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
+
+
 @media (max-width: 1260px) {
     #video-container {
         display: none;

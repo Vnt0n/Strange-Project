@@ -73,4 +73,16 @@ audio.addEventListener("ended", () => {
     }, 1500);
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      const audioControls = document.getElementById("audio-controls");
+      audioControls.classList.remove("hidden");
+      audioControls.classList.add("fade-in");
+    }, 2000);
+  });
+
+  // Reste de votre code JavaScript ici...
+
+
 console.log("Let it happen");

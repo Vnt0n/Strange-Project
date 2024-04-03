@@ -28,5 +28,14 @@
 
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var video = document.getElementById('background-entrance-video');
+          video.addEventListener('ended', function () {
+            window.location.href = 'started.html'; // Redirection vers started.html
+          });
+        });
+      </script>
+
   </body>
 </html>
