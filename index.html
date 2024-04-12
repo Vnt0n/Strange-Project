@@ -21,21 +21,23 @@
   <body>
 
     <main>
-        <video autoplay muted id="background-entrance-video">
-            <source src="videos/Curtain_Opening_Sequence.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <div class="container">
+        <div id="audio-controls" class="controls hidden" data-state="hidden">
+          <button id="play-btn" type="button" data-state="play">
+            <img src="/icons/evil-play_white.png" alt="Play/Stop" />
+          </button>
+        </div>
+
+        <audio>
+          <source src="sounds/evolution_arm.mp3" type="audio/mp3" />
+        </audio>
+
+        <div id="video-container"></div>
+      </div>
 
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var video = document.getElementById('background-entrance-video');
-          video.addEventListener('ended', function () {
-            window.location.href = 'started.html'; // Redirection vers started.html
-          });
-        });
-      </script>
+    <script src="/js/main.js"></script>
 
   </body>
 </html>
